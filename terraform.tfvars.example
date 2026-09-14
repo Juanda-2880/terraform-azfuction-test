@@ -1,0 +1,31 @@
+# ==============================================================================
+# Terraform Variables Example Configuration
+# Copy this file to terraform.tfvars or <environment>.tfvars and supply your values.
+#
+# Command:
+#   cp terraform.tfvars.example terraform.tfvars
+# ==============================================================================
+
+# Base identifier for the Azure Function App and related resources.
+# Note: Azure Function App names must be globally unique across all of Azure.
+name_function = "func-sample-mx-01"
+
+# Primary Azure region for resource deployment.
+# Updated default region: Mexico Central
+location = "Mexico Central"
+
+# Environment descriptor used for tagging and governance.
+environment = "dev"
+
+# Optional explicit Storage Account name (must be 3-24 lowercase alphanumeric characters).
+# If left commented or set to null, a sanitized name will be derived from name_function automatically.
+# storage_account_name = "stfuncsamplemx01"
+
+# Metadata tags assigned across all provisioned Azure infrastructure.
+tags = {
+  Environment = "dev"
+  ManagedBy   = "Terraform"
+  Project     = "azure-function-test"
+  Owner       = "Platform-Team"
+}
+
